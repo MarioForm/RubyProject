@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/movies/searchMovie' => "movies#searchMovie", as: 'searchMovie'
+
+    
   resources :likes
   resources :movies
   resources :users

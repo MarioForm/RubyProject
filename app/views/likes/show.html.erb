@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @like.video %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @like.user %>
+</p>
+
+<p>
+  <strong>Positive:</strong>
+  <%= @like.positive %>
+</p>
+
+<p>
+  <strong>Negative:</strong>
+  <%= @like.negative %>
+</p>
+
+<%= link_to 'Edit', edit_like_path(@like) %> |
+<%= link_to 'Back', likes_path %>

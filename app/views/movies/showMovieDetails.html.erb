@@ -6,7 +6,7 @@
     getMovie();
 </script>
 
-
+    
 
     <nav class="navbar navbar-default movieSpacing">
         <div class="container">
@@ -19,9 +19,15 @@
     <div class="container movieSpacing">
         <div id="movie" class="well"></div>
     </div>
+    
+    <div id="test" style="color:white;">
+        
+    </div>
+  
 
      <div class="container movieSpacing">
          <!-- link_to image_tag(like.png, :controller => :my_controller, :action => :add_likes, :image_id => likes.png ) -->
-         <%=image_tag("like.png", size: "50x50", alt: "like")%>
-         <%=image_tag("dislike.png", size: "50x50", alt: "like")%>
+         <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"></i>
+         <i class="fa fa-thumbs-down fa-3x" aria-hidden="true"></i>
+         
     </div>   

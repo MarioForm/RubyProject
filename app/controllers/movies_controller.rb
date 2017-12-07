@@ -1,10 +1,18 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /movies
   # GET /movies.json
+  
+
   def index
     @movies = Movie.all
+    @games = OMDB.title('Game of Thrones')
+      
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   # GET /movies/1

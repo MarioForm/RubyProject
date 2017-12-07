@@ -38,12 +38,16 @@ function getMovies(searchText) {
             let output = '';
             $.each(movies, function(index, movie) {
                 output += `
+
                   <div class="col-md-3">
                     <div class="well text-center">
                       <img src="${movie.Poster}" alt="No Image Available">
                       <h5>${movie.Title}</h5>
                       <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Details</a>
                     </div>
+                    
+
+
                   </div>
                 `;
             });
@@ -53,6 +57,8 @@ function getMovies(searchText) {
         .catch(function(err) {
             console.log(err);
         });
+    
+   
 };
 
 function movieSelected(id) {
@@ -68,7 +74,7 @@ function getMovie() {
         .then(function(response) {
             console.log(response);
             let movie = response.data;
-      
+            var country = movie.Country;
              let output =`
                 <div class="row movieInfo">
                   <div class="col-md-4">
@@ -93,14 +99,18 @@ function getMovie() {
                     ${movie.Plot}
                     <hr>
                     <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View on IMDB</a>
-                    <a href="http://stuweb.jcu.edu/ctherrien18/cs475/omdbSite.html" class="btn btn-default">Go Back To Search</a>
+                    <a href="http://mike-solid-3001.codio.io" class="btn btn-default">Go Back To Search</a>
                   </div>
                 </div>
+
             `;
-      
+           
             $('#movie').html(output);
+            $('#test').html(country);
         })
         .catch(function(err) {
             console.log(err);
         });
+
 };
+

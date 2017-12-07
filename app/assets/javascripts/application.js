@@ -74,7 +74,7 @@ function getMovie() {
         .then(function(response) {
             console.log(response);
             let movie = response.data;
-            var country = movie.Country;
+            var country = movie.Genre;
              let output =`
                 <div class="row movieInfo">
                   <div class="col-md-4">
@@ -107,6 +107,7 @@ function getMovie() {
            
             $('#movie').html(output);
             $('#test').html(country);
+       
         })
         .catch(function(err) {
             console.log(err);

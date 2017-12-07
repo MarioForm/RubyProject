@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
+<script src="https://use.fontawesome.com/37d2cdd69d.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <%= form_for(movie) do |f| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +18,7 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title%>
   </div>
 
   <div class="field">

@@ -1,19 +1,20 @@
 class MoviesController < ApplicationController
+  before_action :all_movies, only: [:index, :create]
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
- 
+  #respond_to :html, :js
   # GET /movies
   # GET /movies.json
   
 
-  def index
-    @movies = Movie.all
-    @games = OMDB.title('Game of Thrones')
+#   def index
+#     @movies = Movie.all
+    
       
-    respond_to do |format|
-        format.html
-        format.js
-    end
-  end
+#     respond_to do |format|
+#         format.html
+#         format.js
+#     end
+#   end
 
   # GET /movies/1
   # GET /movies/1.json
@@ -49,6 +50,7 @@ class MoviesController < ApplicationController
   # PATCH/PUT /movies/1.json
   def update
     respond_to do |format|
+      # didn't do what tutorial said
       if @movie.update(movie_params)
         format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
         format.json { render :show, status: :ok, location: @movie }
@@ -70,6 +72,12 @@ class MoviesController < ApplicationController
   end
 
   private
+    
+    def all_movies
+        @movies = Movie.all
+    end
+    
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
       @movie = Movie.find(params[:id])

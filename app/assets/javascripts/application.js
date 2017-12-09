@@ -82,6 +82,11 @@ function getMovie() {
             var year = movie.Released;
             var appRating = movie.imdbRating;
             var plot = movie.Plot;
+            var parentalRating = movie.Rated;
+            var director = movie.Director;
+            var writer = movie.Writer;
+            var actors = movie.Actors;
+            var imdbID = movie.imdbID;
             $("#posterField").val(poster);
             $("#titleField").val(title);
             $("#genreField").val(genre);
@@ -91,27 +96,27 @@ function getMovie() {
              let output =`
                 <div class="row movieInfo">
                   <div class="col-md-4">
-                    <img src="${movie.Poster}" class="thumbnail" alt="No Image Available">
+                    <img src="${poster}" class="thumbnail" alt="No Image Available">
                   </div>
                   <div class="col-md-8">
-                    <h2>${movie.Title}</h2>
+                    <h2>${title}</h2>
                     <ul class="list-group">
-                      <li class="list-group-item"><strong>Genre: </strong> ${movie.Genre}</li>
-                      <li class="list-group-item"><strong>Released: </strong> ${movie.Released}</li>
-                      <li class="list-group-item"><strong>Rated: </strong> ${movie.Rated}</li>
-                      <li class="list-group-item"><strong>IMDB Rating: </strong> ${movie.imdbRating}</li>
-                      <li class="list-group-item"><strong>Director: </strong> ${movie.Director}</li>
-                      <li class="list-group-item"><strong>Writer: </strong> ${movie.Writer}</li>
-                      <li class="list-group-item"><strong>Main Actors: </strong> ${movie.Actors}</li>
+                      <li class="list-group-item"><strong>Genre: </strong> ${genre}</li>
+                      <li class="list-group-item"><strong>Released: </strong> ${year}</li>
+                      <li class="list-group-item"><strong>Rated: </strong> ${parentalRating}</li>
+                      <li class="list-group-item"><strong>IMDB Rating: </strong> ${appRating}</li>
+                      <li class="list-group-item"><strong>Director: </strong> ${director}</li>
+                      <li class="list-group-item"><strong>Writer: </strong> ${writer}</li>
+                      <li class="list-group-item"><strong>Main Actors: </strong> ${actors}</li>
                     </ul>
                   </div>
                 </div>
                 <div class="row">
                   <div class="well">
                     <h4>Plot</h4>
-                    ${movie.Plot}
+                    ${plot}
                     <hr>
-                    <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View on IMDB</a>
+                    <a href="http://imdb.com/title/${imdbID}" target="_blank" class="btn btn-primary">View on IMDB</a>
                   </div>
                 </div>
 

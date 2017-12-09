@@ -4,10 +4,13 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   
+  def showUserMovies
+      @userMovies = Movie.where(:username => params[:username])
+  end
 
   def index
     @movies = Movie.all
-    
+    @username = User.find[p]
   end
 
   # GET /movies/1

@@ -18,9 +18,19 @@
     </div>
   <% end %>
 
-  <div class="container">
+  <div class="container-fluid">
+      
       <div class="row">
-          <div class="col-lg-10">
+          <div class="col-sm-5">
+              <div class="form-group">
+                <%= f.label :poster %>
+                <%= f.text_field :poster, :id=>"posterField", :class=>"form-control"%>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-5">
               <div class="form-group">
                 <%= f.label :title %>
                 <%= f.text_field :title, :id=>"titleField", :class=>"form-control"%>
@@ -28,34 +38,47 @@
           </div>
       </div>
       
+      <div class="row">
+          <div class="col-sm-5">
+              <div class="form-group">
+                <%= f.label :genre %>
+                <%= f.text_field :genre, :id=>"genreField", :class=>"form-control" %>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-5">
+              <div class="form-group">
+                <%= f.label :year %>
+                <%= f.text_field :year, :id=>"yearField", :class=>"form-control" %>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-5">
+              <div class="form-group">
+                <%= f.label :appRating %>
+                <%= f.text_field :appRating, :id=>"appRatingField", :class=>"form-control" %>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-5">
+              <div class="form-group">
+                <%= f.label :plot %>
+                <%= f.text_field :plot, :id=>"plotField", :class=>"form-control" %>
+              </div>
+          </div>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit 'Create Movie', :class => 'btn btn-primary' %>
+      </div>
       
   </div>
 
-  
 
-  <div class="field">
-    <%= f.label :genre %>
-    <%= f.text_field :genre, :id=>"genreField" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :year %>
-    <%= f.text_field :year, :id=>"yearField" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :appRating %>
-    <%= f.text_field :appRating, :id=>"appRatingField" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :plot %>
-    <%= f.text_field :plot, :id=>"plotField" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  
 <% end %>

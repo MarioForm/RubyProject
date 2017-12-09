@@ -8,11 +8,6 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     
-      
-    respond_to do |format|
-        format.html
-        format.js
-    end
   end
 
   # GET /movies/1
@@ -81,6 +76,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :genre, :year, :appRating, :plot)
+      params.require(:movie).permit(:poster, :title, :genre, :year, :appRating, :plot)
     end
 end

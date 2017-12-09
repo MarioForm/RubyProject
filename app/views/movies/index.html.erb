@@ -2,13 +2,14 @@
 
 <h1>Movies</h1>
 
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
 
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+       <th>Poster</th>
+       <th>Title</th>
        <th>Genre</th>
        <th>Year</th>
        <th>Apprating</th>
@@ -20,6 +21,7 @@
    <tbody>
      <% @movies.each do |movie| %>
        <tr>
+         <td><img src="<%= movie.poster %>"></td>
          <td><%= movie.title %></td>
          <td><%= movie.genre %></td>
          <td><%= movie.year %></td>
@@ -35,4 +37,4 @@
  
  <br>
  
- <a href="http://mike-solid-3001.codio.io" class="btn btn-default">Go Back To Search</a>
+ <%= link_to 'Go Back to Search', root_path, :class=>"btn btn-default" %>

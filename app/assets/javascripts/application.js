@@ -76,11 +76,13 @@ function getMovie() {
         .then(function(response) {
             console.log(response);
             let movie = response.data;
+            var poster = movie.Poster;
             var title = movie.Title;
             var genre = movie.Genre;
             var year = movie.Released;
             var appRating = movie.imdbRating;
             var plot = movie.Plot;
+            $("#posterField").val(poster);
             $("#titleField").val(title);
             $("#genreField").val(genre);
             $("#yearField").val(year);
@@ -110,14 +112,13 @@ function getMovie() {
                     ${movie.Plot}
                     <hr>
                     <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View on IMDB</a>
-                    <a href="http://mike-solid-3001.codio.io" class="btn btn-default">Go Back To Search</a>
                   </div>
                 </div>
 
             `;
            
             $('#movie').html(output);
-            $('#test').html(title);
+            
        
         })
         .catch(function(err) {

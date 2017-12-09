@@ -1,7 +1,17 @@
-<h1>New Movie</h1>
+<h1>Add New Movie</h1>
 
 <script>getMovie()</script>
 
 <%= render 'form', movie: @movie %>
 
-<%= link_to 'Back', new_movie_path %>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-5">
+          <div class="form-group">
+            <%= link_to 'Back', new_movie_path, :class=>"btn btn-default" %>
+          </div>
+      </div>
+  </div>
+</div>
+
+

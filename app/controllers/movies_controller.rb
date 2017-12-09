@@ -1,20 +1,19 @@
 class MoviesController < ApplicationController
-  before_action :all_movies, only: [:index, :create]
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   #respond_to :html, :js
   # GET /movies
   # GET /movies.json
   
 
-#   def index
-#     @movies = Movie.all
+  def index
+    @movies = Movie.all
     
       
-#     respond_to do |format|
-#         format.html
-#         format.js
-#     end
-#   end
+    respond_to do |format|
+        format.html
+        format.js
+    end
+  end
 
   # GET /movies/1
   # GET /movies/1.json
@@ -73,9 +72,6 @@ class MoviesController < ApplicationController
 
   private
     
-    def all_movies
-        @movies = Movie.all
-    end
     
     
     # Use callbacks to share common setup or constraints between actions.

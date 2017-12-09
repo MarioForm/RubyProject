@@ -19,14 +19,9 @@
     <div class="container movieSpacing">
         <div id="movie" class="well"></div>
     </div>
-    
-    <div id="test" style="color:white;">
-        
-    </div>
 
      <div class="container movieSpacing">
-         <!-- link_to image_tag(like.png, :controller => :my_controller, :action => :add_likes, :image_id => likes.png ) -->
+         <%= link_to 'Add to My Movies', new_movie_path, :class => "btn btn-primary" %>
          <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"></i>
          <i class="fa fa-thumbs-down fa-3x" aria-hidden="true"></i>
-         
-    </div>   
+    </div>

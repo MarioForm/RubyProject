@@ -22,6 +22,8 @@ $(document).ready(function() {
         getMovies(searchText);
         e.preventDefault();
     });
+    
+    
 });
 
 $('i').hover(function() {
@@ -74,7 +76,16 @@ function getMovie() {
         .then(function(response) {
             console.log(response);
             let movie = response.data;
-            var country = movie.Genre;
+            var title = movie.Title;
+            var genre = movie.Genre;
+            var year = movie.Released;
+            var appRating = movie.imdbRating;
+            var plot = movie.Plot;
+            $("#titleField").val(title);
+            $("#genreField").val(genre);
+            $("#yearField").val(year);
+            $("#appRatingField").val(appRating);
+            $("#plotField").val(plot);
              let output =`
                 <div class="row movieInfo">
                   <div class="col-md-4">
@@ -106,7 +117,7 @@ function getMovie() {
             `;
            
             $('#movie').html(output);
-            $('#test').html(country);
+            $('#test').html(title);
        
         })
         .catch(function(err) {

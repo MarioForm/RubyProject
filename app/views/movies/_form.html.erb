@@ -2,6 +2,8 @@
 <script src="https://use.fontawesome.com/37d2cdd69d.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>getMovie()</script>
+
 
 <%= form_for(movie) do |f| %>
   <% if movie.errors.any? %>
@@ -16,32 +18,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title%>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-10">
+              <div class="form-group">
+                <%= f.label :title %>
+                <%= f.text_field :title, :id=>"titleField", :class=>"form-control"%>
+              </div>
+          </div>
+      </div>
+      
+      
   </div>
+
+  
 
   <div class="field">
     <%= f.label :genre %>
-    <%= f.text_field :genre %>
+    <%= f.text_field :genre, :id=>"genreField" %>
   </div>
 
   <div class="field">
     <%= f.label :year %>
-    <%= f.number_field :year %>
+    <%= f.text_field :year, :id=>"yearField" %>
   </div>
 
   <div class="field">
     <%= f.label :appRating %>
-    <%= f.text_field :appRating %>
+    <%= f.text_field :appRating, :id=>"appRatingField" %>
   </div>
 
   <div class="field">
     <%= f.label :plot %>
-    <%= f.text_field :plot %>
+    <%= f.text_field :plot, :id=>"plotField" %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  
 <% end %>

@@ -2,35 +2,22 @@
 
 <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
 
-<p>
-  <strong>Poster:</strong>
-  <%= image_tag(@movie.poster) %>
-</p>
+<div class="container">
+     <div class="row movieInfo">
+      <div class="col-md-4">
+        <img src="<%= @movie.poster %>" class="thumbnail" alt="No Image Available">
+      </div>
+      <div class="col-md-8">
+        <h2><%= @movie.title %></h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Genre: </strong> <%= @movie.genre %></li>
+          <li class="list-group-item"><strong>Released: </strong> <%= @movie.year %></li>
+          <li class="list-group-item"><strong>IMDB Rating: </strong> <%= @movie.appRating %></li>
+          <li class="list-group-item"><strong>Plot: </strong> <%= @movie.plot %></li>
+        </ul>
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_movie_path(@movie) %> |
+    <%= link_to 'Back', movies_path %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @movie.genre %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @movie.year %>
-</p>
-
-<p>
-  <strong>Apprating:</strong>
-  <%= @movie.appRating %>
-</p>
-
-<p>
-  <strong>Plot:</strong>
-  <%= @movie.plot %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+</div>

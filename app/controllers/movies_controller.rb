@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-    @username = User.find[p]
+    #@username = User.find[p]
   end
 
   # GET /movies/1

@@ -17,3 +17,7 @@
 a:visited {
     color: white;
 }
+
+.centerTitle{
+    text-align: center;
+}

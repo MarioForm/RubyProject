@@ -3,10 +3,16 @@ class MoviesController < ApplicationController
   #respond_to :html, :js
   # GET /movies
   # GET /movies.json
+  # 
+  
+  def sortedMovies
+      @sortedMovies = Movie.sort_by_popularity('DESC')
+  end
   
   def showUserMovies
       @userMovies = Movie.where(:user_id => params[:user_id])
   end
+    
 
   def index
     @movies = Movie.all

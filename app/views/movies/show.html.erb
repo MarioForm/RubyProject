@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
+<script src="https://use.fontawesome.com/37d2cdd69d.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    getMovie();
+</script>
 
 <div class="container">
      <div class="row movieInfo">
@@ -18,7 +24,9 @@
         <h4 class="mt-2">Views: <%= @movie.hits%></h4>
       </div>
     </div>
+
     <%= link_to 'Edit', edit_movie_path(@movie) %> |
     <%= link_to 'Back', movies_path %>
+
 
 </div>

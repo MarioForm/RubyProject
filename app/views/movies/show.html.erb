@@ -15,6 +15,7 @@
           <li class="list-group-item"><strong>IMDB Rating: </strong> <%= @movie.appRating %></li>
           <li class="list-group-item"><strong>Plot: </strong> <%= @movie.plot %></li>
         </ul>
+        <h4 class="mt-2">Views: <%= @movie.hits%></h4>
       </div>
     </div>
     <%= link_to 'Edit', edit_movie_path(@movie) %> |

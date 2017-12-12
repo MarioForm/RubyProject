@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Movies</h1>
-
 <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Movies</h1>
+            <%= link_to 'Go Back to Search', root_path, :class=>"btn btn-default" %>
+        </div>
+    </div>
+</div>
 
     <div class="container gallery-container">
         <div class="tz-gallery">
@@ -19,7 +22,7 @@
                                 <p>Rating: <%= movie.appRating %></p>
                                 <div class="controlSpacing">
                                     <%= link_to 'Edit', edit_movie_path(movie), :class => "btn btn-primary" %>
-                                    <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-primary" %>
+                                    <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" %>
                                 </div>
                             </div>
                         </div>
@@ -30,4 +33,3 @@
     </div>
 
    
- <%= link_to 'Go Back to Search', root_path, :class=>"btn btn-default" %>

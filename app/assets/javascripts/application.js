@@ -23,7 +23,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
     
-    
 });
 
 $('i').hover(function() {

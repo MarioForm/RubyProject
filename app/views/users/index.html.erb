@@ -2,37 +2,39 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1">
+            <h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Show User</th>
+                  <th>Edit User</th>
+                  <th>Destroy User</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                      <th scope="row"><%= user.id %></th>
+                      <td><%= user.firstName %></td>
+                      <td><%= user.lastName %></td>
+                      <td><%= link_to 'Show User Movies', showUserMovies_path(user), :class => "btn btn-primary" %></td>
+                      <td><%= link_to 'Edit', edit_user_path(user), :class => "btn btn-success" %></td>
+                      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+                    </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <%= link_to 'New User', new_user_path %>
+        </div>
+    </div>
+</div>
 
-      
-      <th colspan="4"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.firstName %></td>
-        <td><%= user.lastName %></td>
-
-        <td><%= link_to 'Show Movies', showUserMovies_path(user) %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
 

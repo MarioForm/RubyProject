@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'punching_bag'
+
 # gem for OMDB
 gem 'omdbapi'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

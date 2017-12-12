@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstName %>
-</p>
+<div class="container">
+     <div class="row movieInfo">
+      <div class="col-sm-6 offset-sm-3">
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Firstname: </strong> <%= @user.firstName %></li>
+          <li class="list-group-item"><strong>Lastname: </strong>  <%= @user.lastName %></li>
+        </ul>
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastName %>
-</p>
+</div>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

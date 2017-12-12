@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
+
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -11,18 +13,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :firstName %>
-    <%= f.text_field :firstName %>
-  </div>
+    <div class="container">
 
-  <div class="field">
-    <%= f.label :lastName %>
-    <%= f.text_field :lastName %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+              <div class="form-group">
+                <%= f.label :firstName %>
+                <%= f.text_field :firstName, :class=>"form-control"%>
+              </div>
+          </div>
+      </div>
+        
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+              <div class="form-group">
+                <%= f.label :lastName %>
+                <%= f.text_field :lastName, :class=>"form-control"%>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+              <div class="actions">
+                <%= f.submit 'Add User', :class => 'btn btn-primary' %>
+              </div>
+          </div>
+      </div>
+    
+        
 <% end %>

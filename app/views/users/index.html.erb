@@ -24,7 +24,7 @@
                       <th scope="row"><%= user.id %></th>
                       <td><%= user.firstName %></td>
                       <td><%= user.lastName %></td>
-                      <td><%= link_to 'Show User Movies', showUserMovies_path(user), :class => "btn btn-primary" %></td>
+                      <td><%= link_to 'Show User Movies', showUserMovies_path(user.id), :class => "btn btn-primary" %></td>
                       <td><%= link_to 'Edit', edit_user_path(user), :class => "btn btn-success" %></td>
                       <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
                     </tr>

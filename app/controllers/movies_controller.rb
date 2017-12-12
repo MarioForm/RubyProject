@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   
   def showUserMovies
       @userMovies = Movie.where(:user_id => params[:user_id])
+      @user = User.where(:id => params[:user_id])
   end
 
   def index

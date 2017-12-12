@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   # GET /movies.json
   
   def showUserMovies
-      @userMovies = Movie.where(:username => params[:username])
+      @userMovies = Movie.where(:user_id => params[:user_id])
   end
 
   def index
@@ -79,6 +79,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:poster, :title, :genre, :year, :appRating, :plot)
+      params.require(:movie).permit(:poster, :title, :genre, :year, :appRating, :plot, :user_id)
     end
 end

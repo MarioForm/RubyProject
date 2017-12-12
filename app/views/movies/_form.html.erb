@@ -23,6 +23,15 @@
       <div class="row">
           <div class="col-sm-5">
               <div class="form-group">
+                <%= f.label :user_id %>
+                <%= f.text_field :user_id, :id=>"idField", :class=>"form-control"%>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-5">
+              <div class="form-group">
                 <%= f.label :poster %>
                 <%= f.text_field :poster, :id=>"posterField", :class=>"form-control"%>
               </div>
